@@ -1,4 +1,4 @@
-package br.com.sartori.customers.application.core;
+package br.com.sartori.customers.application.core.exceptions;
 
 public class EntityNotFoundException extends RuntimeException {
 

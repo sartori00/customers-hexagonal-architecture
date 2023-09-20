@@ -1,4 +1,4 @@
-package br.com.sartori.customers.config.kafka;
+package br.com.sartori.customers.infrastructure.kafka;
 
 import br.com.sartori.customers.adapters.in.consumer.message.CustomerMessage;
 import org.apache.kafka.common.serialization.StringDeserializer;

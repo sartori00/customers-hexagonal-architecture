@@ -1,6 +1,6 @@
 package br.com.sartori.customers.adapters.out;
 
-import br.com.sartori.customers.adapters.out.database.repository.CustomerRepository;
+import br.com.sartori.customers.infrastructure.database.repository.CustomerRepository;
 import br.com.sartori.customers.application.ports.out.DeleteCustomerByIdOutputPort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

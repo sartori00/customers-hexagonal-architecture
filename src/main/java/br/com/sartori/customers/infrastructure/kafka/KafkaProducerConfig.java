@@ -1,4 +1,4 @@
-package br.com.sartori.customers.config.kafka;
+package br.com.sartori.customers.infrastructure.kafka;
 
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.context.annotation.Bean;

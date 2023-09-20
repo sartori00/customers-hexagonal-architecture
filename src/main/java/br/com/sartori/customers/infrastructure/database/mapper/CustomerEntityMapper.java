@@ -1,6 +1,6 @@
-package br.com.sartori.customers.adapters.out.database.mapper;
+package br.com.sartori.customers.infrastructure.database.mapper;
 
-import br.com.sartori.customers.adapters.out.database.CustomerEntity;
+import br.com.sartori.customers.infrastructure.database.entity.CustomerEntity;
 import br.com.sartori.customers.application.core.domain.Customer;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

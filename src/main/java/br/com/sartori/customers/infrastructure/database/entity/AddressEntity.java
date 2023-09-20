@@ -1,4 +1,4 @@
-package br.com.sartori.customers.adapters.out.database.entity;
+package br.com.sartori.customers.infrastructure.database.entity;
 
 import lombok.Data;
 

@@ -1,6 +1,5 @@
-package br.com.sartori.customers.adapters.out.database;
+package br.com.sartori.customers.infrastructure.database.entity;
 
-import br.com.sartori.customers.adapters.out.database.entity.AddressEntity;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

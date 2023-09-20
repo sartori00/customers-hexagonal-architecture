@@ -1,4 +1,4 @@
-package br.com.sartori.customers.config;
+package br.com.sartori.customers.infrastructure.beans;
 
 import br.com.sartori.customers.adapters.out.DeleteCustomerByIdAdapter;
 import br.com.sartori.customers.application.core.usecase.DeleteCustomerByIdUseCase;
