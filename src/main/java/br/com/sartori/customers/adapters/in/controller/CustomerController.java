@@ -3,6 +3,7 @@ package br.com.sartori.customers.adapters.in.controller;
 import br.com.sartori.customers.adapters.in.controller.dto.CustomerRequest;
 import br.com.sartori.customers.adapters.in.controller.dto.CustomerResponse;
 import br.com.sartori.customers.adapters.in.controller.mapper.CustomerMapper;
+import br.com.sartori.customers.application.ports.in.DeleteCustomerByIdInputPort;
 import br.com.sartori.customers.application.ports.in.FindCustomerByIdInputPort;
 import br.com.sartori.customers.application.ports.in.InsertCustomerInputPort;
 import br.com.sartori.customers.application.ports.in.UpdateCustomerInputPort;
@@ -24,6 +25,9 @@ public class CustomerController {
     @Autowired
     UpdateCustomerInputPort updateCustomerInputPort;
 
+    @Autowired
+    DeleteCustomerByIdInputPort deleteCustomerByIdInputPort;
+
     @PostMapping
     public ResponseEntity<Void> insert(@RequestBody @Valid CustomerRequest request){
         insertCustomerInputPort.insert(CustomerMapper.INSTANCE.toCustomer(request), request.zipCode());
@@ -33,8 +37,8 @@ public class CustomerController {
     @GetMapping("/{id}")
     public ResponseEntity<CustomerResponse> findById(@PathVariable("id") final String id){
         var customer = findCustomerByIdInputPort.findById(id);
-        var retorno = CustomerMapper.INSTANCE.toCustomerResponse(customer);
-        return ResponseEntity.ok().body(retorno);
+        var dto = CustomerMapper.INSTANCE.toCustomerResponse(customer);
+        return ResponseEntity.ok().body(dto);
     }
 
     @PutMapping("/{id}")
@@ -46,5 +50,11 @@ public class CustomerController {
         updateCustomerInputPort.update(customer, request.zipCode());
 
         return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable("id") final String id){
+        deleteCustomerByIdInputPort.delete(id);
+        return ResponseEntity.noContent().build();
     }
 }
